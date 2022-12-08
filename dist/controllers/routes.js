@@ -5,10 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const User_1 = __importDefault(require("./User"));
+const Posts_1 = __importDefault(require("./Posts"));
 const routes = (0, express_1.Router)();
 routes.post("/user", User_1.default.create);
 routes.get("/user", User_1.default.findAll);
 routes.get("/user/:id", User_1.default.findOne);
 routes.put("/user/:id", User_1.default.uptade);
 routes.delete("/user/:id", User_1.default.delete);
+routes.post("/post", Posts_1.default.create);
+routes.get("/post", Posts_1.default.findAll);
 exports.default = routes;
